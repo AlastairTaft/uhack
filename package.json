@@ -34,9 +34,9 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "build": "rimraf dist && npm run build:tools && node tools-es5/build.js",
+    "build": "rimraf dist && npm run build:tools && node tools-es5/build.js --preserve-symlinks",
     "build:tools": "rimraf tools-es5 && babel tools -d tools-es5",
-    "start": "npm run build:tools && rimraf dist && node tools-es5/start.js",
+    "start": "npm run build:tools && rimraf dist && node tools-es5/start.js --preserve-symlinks",
     "postinstall": "npm run build -- release"
   },
   "repository": {
