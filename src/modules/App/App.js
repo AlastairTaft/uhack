@@ -10,7 +10,7 @@ StyleSheet.addCSS({
     color: '#2f2f2f',
   },
   'html': {
-    overflow: 'hidden',
+    overflowX: 'hidden',
   },
 })
 

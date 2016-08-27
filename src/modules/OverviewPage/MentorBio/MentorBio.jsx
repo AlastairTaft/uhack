@@ -58,20 +58,22 @@ const styles = StyleSheet.create({
 	thumbnail: {
 		position: 'absolute',
 		left: 16,
-		top: 16,
+		top: 0,
 		width: 72,
 		height: 72,
 		backgroundSize: 'cover',
+		borderRadius: '50%',
 	},
 	name: {
 		position: 'absolute',
 		left: 72 + (16 * 2),
-		top: 25,
+		top: 15,
+		fontWeight: '600',
 	},
 	title: {
 		position: 'absolute',
 		left: 72 + (16 * 2),
-		top: 50,
+		top: 35,
 	},
 })
 

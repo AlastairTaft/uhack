@@ -137,15 +137,17 @@ class OverviewPage extends Component {
 				</FlatButton>
 			</Card>
 			<Card style={{textAlign: 'center', padding: 10}}>
-				<h2>Course Description</h2>
+				<h2 className={styles.subTitle}>Course Description</h2>
 				<div dangerouslySetInnerHTML={{__html: description}} />
 			</Card>
 			<Card style={{textAlign: 'center', padding: 10}}>
-				<h2>Course Outline</h2>
-				<LessonOutline {...courseOutline} />
+				<h2 className={styles.subTitle}>Course Outline</h2>
+				<div style={{textAlign: 'left',}}>
+					<LessonOutline {...courseOutline} />
+				</div>
 			</Card>
 			<Card style={{textAlign: 'center', padding: 10}}>
-				<h2>Instructor</h2>
+				<h2 className={styles.subTitle}>Instructor</h2>
 				<MentorBio 
 					name={mentorName} 
 					thumbnail={mentorThumbnail}
@@ -196,6 +198,10 @@ const styles = StyleSheet.create({
 		fontWeight: 'normal',
 		margin: 10,
 		fontSize: 23,
+	},
+	subTitle: {
+		fontWeight: 'normal',
+    fontSize: 20,
 	},
 })
 
