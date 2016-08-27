@@ -65,9 +65,6 @@ class SuggestedCourse extends Component {
 				backgroundColor: 'rgba(20, 19, 75, 0.5)',
 				backgroundBlendMode: 'multiply',
 		    // Hmm seems a little hacky but meh!
-		    // TODO: I have a feeling this is only in here as a work around caused
-		    // by the container having display inline-block, which means it doesn't
-		    // fill the whole width automagically
 		    width: screenWidth || 400,
 			}}
 		>

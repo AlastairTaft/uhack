@@ -29,12 +29,12 @@ export function loadCoursesOverview() {
 
 export function loadCourse(id){
   return function(dispatch){
-    return dispatch({
+    return Promise.resolve(dispatch({
       types: ['LOAD_COURSE_REQUEST', 'LOAD_COURSE_SUCCESS', 'LOAD_COURSE_FAILURE'],
       shouldCallAPI: (state) => !state.courses[id],
       callAPI: () => fetch(__API_URL__ + `/api/course/${id}`),
       payload: { id },
-    })
+    }))
     .then(result => {
       if (result != 'LOAD_COURSE_SUCCESS') return result
 

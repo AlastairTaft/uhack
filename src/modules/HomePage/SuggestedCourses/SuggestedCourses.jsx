@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import look, { StyleSheet } from 'react-look'
 import SuggestedCourse from './SuggestedCourse'
-import PaginationIndicator from './PaginationIndicator'
+import PaginationIndicator from './../../PaginationIndicator'
 import Slider from 'react-motion-slider'
 
 class SuggestedCourses extends Component {
@@ -31,8 +31,12 @@ class SuggestedCourses extends Component {
 		    beforeSlide={(currentIndex, nextIndex) => this.setState({selectedCourseIndex: nextIndex})}
 		  >
 		    {courses.map((c, i) =>
-		      <SuggestedCourse {...c} key={`slide-${i}`} className="slide" />
-		    )}
+		      <SuggestedCourse 
+		      	{...c} 
+		      	key={`slide-${i}`} 
+		      	className="slide" 
+	      	/>
+		    )}	
 		  </Slider>
 			<PaginationIndicator total={courses.length} index={selectedCourseIndex} />
 		</div>

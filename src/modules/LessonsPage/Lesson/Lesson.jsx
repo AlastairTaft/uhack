@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import look, { StyleSheet } from 'react-look'
 import formatNumberToMinutes from './../../../formatNumberToMinutes.js'
+import Card from './../Card'
 
 class Lesson extends Component { 
 
@@ -44,25 +45,45 @@ class Lesson extends Component {
 			estimatedNumberOfMinutes,
 			step,
 			maxStep,
+			...otherProps,
 		} = this.props
 
-		return <div>
-			<div className={styles.title}>{title}</div>
-			<div className={styles.step}>{step} of {maxStep}</div>
-			<div 
-				className={styles.description}
-				dangerouslySetInnerHTML={{__html: description}}
-			/>
-			<div className={styles.estimatedTime}>
-				{estimatedNumberOfMinutes ? formatNumberToMinutes(estimatedNumberOfMinutes) : ''}
-			</div>
+		return <div className={styles.container} {...otherProps}>
+			<Card className={styles.card}>
+				<div className={styles.title}>{title}</div>
+				<div className={styles.step}>{step} of {maxStep}</div>
+				<div 
+					className={styles.description}
+					dangerouslySetInnerHTML={{__html: description}}
+				/>
+				<div className={styles.estimatedTime}>
+					{estimatedNumberOfMinutes ? formatNumberToMinutes(estimatedNumberOfMinutes) : ''}
+				</div>
+			</Card>
 		</div>
 	}
 }
 
 const styles = StyleSheet.create({
+	container: {
+		display: 'inline-block',
+	},
+	card: {
+		margin: 15,
+	},
 	title: {
-
+		paddingTop: 70,
+		fontWeight: '600',
+	},
+	step: {
+		padding: 15,
+		fontWeight: '600',
+	},
+	description: {
+		paddingBottom: 15,
+	},
+	estimatedTime: {
+		paddingBottom: 40,
 	},
 })
 

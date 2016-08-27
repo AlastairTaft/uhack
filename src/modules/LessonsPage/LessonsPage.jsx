@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import look, { StyleSheet } from 'react-look'
 import Lesson from './Lesson'
+import Slider from 'react-motion-slider'
+import withScreenWidth from './../withScreenWidth'
+import PaginationIndicator from './../PaginationIndicator'
 
 class LessonsPage extends Component {
 
@@ -47,16 +50,40 @@ class LessonsPage extends Component {
 		lessons: [],
 	};
 
+	state = {
+		selectedLessonIndex: 0,
+	};
+
 	render = () => {
-		const { name, lessons } = this.props
+		const { name, lessons, screenWidth } = this.props
+		const { selectedLessonIndex } = this.state
 
 		return <div 
 			className={styles.container}
 		>
 			<div className={styles.title}>{name}</div>
-			<div>
-				{lessons.map(l => <Lesson {...l} />)}
+			<div className={styles.videoPlaceholder} />
+			<div className={styles.sliderWrap}>
+				<Slider
+			    ref="slider"
+			    currentKey={`slide-${selectedLessonIndex}`} 
+			    beforeSlide={(currentIndex, nextIndex) => this.setState({selectedLessonIndex: nextIndex})}
+			  >
+			    {lessons.map((l, i) =>
+			      <Lesson 
+			      	{...l} 
+			      	key={`slide-${i}`} 
+							style={{
+			      		width: (screenWidth - 100) || 400,
+			      	}} 
+		      	/>
+			    )}
+			  </Slider>
 			</div>
+			<PaginationIndicator 
+				index={selectedLessonIndex}
+				total={lessons.length}
+			/>
 		</div>
 	};
 }
@@ -65,6 +92,18 @@ const styles = StyleSheet.create({
 	container: {
 		backgroundColor: '#2954f4',
 	},
+	title: {
+    color: 'white',
+    textAlign: 'center',
+    paddingTop: 10,
+	},
+	sliderWrap: {
+		paddingLeft: 30,
+		paddingRight: 30,
+	},
+	videoPlaceholder: {
+		height: 300,
+	},
 })
 
-export default LessonsPage
+export default withScreenWidth(look(LessonsPage))

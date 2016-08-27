@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import look, { StyleSheet } from 'react-look'
+
 const c = StyleSheet.combineStyles
 
 class FlatButton extends Component {

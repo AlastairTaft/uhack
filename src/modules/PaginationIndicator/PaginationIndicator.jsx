@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import look, { StyleSheet } from 'react-look'
 
+const c = StyleSheet.combineStyles
+
 class PaginationIndicator extends Component {
 	
 	static propTypes = {
@@ -21,15 +23,17 @@ class PaginationIndicator extends Component {
 	};
 
 	render = () => {
-		const { total, index } = this.props
+		var { total, index, className } = this.props
 
 		var dots = []
 		for (var i = 0; i < total; i++){
-			if (index == i){
-				dots.push(<div className={styles.selectedDot} />)
+			var localClass = (index == i) ? styles.selectedDot : styles.dot
+			if (className){
+				className = c(localClass, className)
 			} else {
-				dots.push(<div className={styles.dot} />)
+				className = localClass
 			}
+			dots.push(<div className={localClass} />)
 		}
 
 		return <div className={styles.container}>
