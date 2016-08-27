@@ -12,6 +12,7 @@ import reducer from './reducers/index.js'
 import routes from './modules/routes.js'
 import fs from 'fs'
 import { Presets, StyleSheet, LookRoot } from 'react-look'
+import coursesRouter from './api/courses.js'
 
 const templateHtml = fs.readFileSync(path.resolve(__dirname, 'public', 'index.html'), 'utf8')
 const serverConfig = Presets['react-dom']
@@ -54,5 +55,7 @@ server.get('*', function(req, res, next) {
   })
 })
 server.use(express.static(path.resolve(__dirname, 'public')))
+
+server.use('/api/courses', coursesRouter)
 
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}!`))
