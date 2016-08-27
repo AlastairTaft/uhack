@@ -1,4 +1,4 @@
-
+import make2Digits from './make2Digits.js'
 
 /**
  * @param {number} price Price in cent. Formats the price with commas, 
@@ -13,8 +13,3 @@ export default function (price){
 	return cent ? (strPrice + '.' + make2Digits(cent)) : strPrice
 }
 
-function make2Digits(str){
-  if (String(str).length == 1) 
-    return '0' + str
-  return str
-}

@@ -34,7 +34,7 @@ const courses = {
   }
 }
 
-router.get('/:id', async (req, res, next) => {
+router.get('/:id', (req, res) => {
   var id = req.params.id
 
   var course = courses[id]
@@ -43,7 +43,7 @@ router.get('/:id', async (req, res, next) => {
       message: 'Course not found.'
     })
   }
-  res.send(course)
+  return res.send(course)
 })
 
 export default router

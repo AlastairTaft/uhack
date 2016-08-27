@@ -14,7 +14,7 @@ const mentors = {
   },
 }
 
-router.get('/:id', async (req, res, next) => {
+router.get('/:id', (req, res, next) => {
   var id = req.params.id
 
   var mentor = mentors[id]

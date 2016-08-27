@@ -7,8 +7,8 @@ import url from 'url'
 const router = new Router();
 router.use(bodyParser.json())
 
-router.get('*', async (req, res, next) => {
-  res.send([
+router.get('*', (req, res) => {
+  return res.send([
     {
       id: 1,
       backdrop: `${__API_URL__}/static/mountain.jpg`,
