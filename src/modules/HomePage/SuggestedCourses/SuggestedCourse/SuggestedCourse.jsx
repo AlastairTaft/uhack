@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import look, { StyleSheet } from 'react-look'
 import StarsRating from './../../../StarsRating'
+import withScreenWidth from './../../../withScreenWidth.jsx'
 
 class SuggestedCourse extends Component {
 
@@ -54,6 +55,7 @@ class SuggestedCourse extends Component {
 			numberOfSteps,
 			minutesPerStep,
 			rating,
+			screenWidth,
 		} = this.props
 
 		return <div 
@@ -62,6 +64,8 @@ class SuggestedCourse extends Component {
 				backgroundImage: `url(${backdrop})`,
 				backgroundColor: 'rgba(20, 19, 75, 0.5)',
 				backgroundBlendMode: 'multiply',
+		    // Hmm seems a little hacky but meh!
+		    width: screenWidth || 400,
 			}}
 		>
 			<h1 className={styles.courseTitle}>{name}</h1>
@@ -85,6 +89,7 @@ const styles = StyleSheet.create({
 		position: 'relative',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    display: 'inline-block',
 	},
 	courseTitle: {
 		position: 'absolute',
@@ -119,4 +124,4 @@ const styles = StyleSheet.create({
 	},
 })
 
-export default look(SuggestedCourse)
+export default withScreenWidth(look(SuggestedCourse))
