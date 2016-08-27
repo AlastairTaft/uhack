@@ -21,10 +21,11 @@ class SuggestedCourses extends Component {
 		const { selectedCourseIndex } = this.state
 		const { courses } = this.props
 		var selectedCourse = courses[selectedCourseIndex]
+		
 		return <div className={styles.container}>
 			<div className={styles.title}>ValYou</div>
 			<SuggestedCourse {...selectedCourse} />
-			<PaginationIndicator total={5} index={1} />
+			<PaginationIndicator total={courses.length} index={selectedCourseIndex} />
 		</div>
 	}
 }

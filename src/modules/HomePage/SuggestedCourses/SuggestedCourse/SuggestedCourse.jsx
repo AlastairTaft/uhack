@@ -13,7 +13,7 @@ class SuggestedCourse extends Component {
 		/**
 		 * This is the background image to display.
 		 */
-		backgroundImage: React.PropTypes.string,
+		backdrop: React.PropTypes.string,
 
 		/**
 		 * Number of reviews
@@ -38,7 +38,7 @@ class SuggestedCourse extends Component {
 
 	static defaultProps = {
 		name: "How To Win Friends and Influence People",
-		backgroundImage: require('./mountain.jpg'),
+		backdrop: '', //require('./mountain.jpg'),
 		numberOfReviews: 47,
 		numberOfSteps: 7,
 		minutesPerStep: 5,
@@ -49,7 +49,7 @@ class SuggestedCourse extends Component {
 
 		const { 
 			name, 
-			backgroundImage, 
+			backdrop, 
 			numberOfReviews,
 			numberOfSteps,
 			minutesPerStep,
@@ -59,7 +59,9 @@ class SuggestedCourse extends Component {
 		return <div 
 			className={styles.container}
 			style={{
-				backgroundImage: `url(${backgroundImage})`,
+				backgroundImage: `url(${backdrop})`,
+				backgroundColor: 'rgba(20, 19, 75, 0.5)',
+				backgroundBlendMode: 'multiply',
 			}}
 		>
 			<h1 className={styles.courseTitle}>{name}</h1>
@@ -88,7 +90,7 @@ const styles = StyleSheet.create({
 		position: 'absolute',
 		left: 12,
 		right: 12,
-		top: 212,
+		top: 192,
 		margin: 0,
 		fontSize: 20,
 		textAlign: 'left',

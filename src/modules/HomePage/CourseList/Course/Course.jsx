@@ -61,7 +61,8 @@ const styles = StyleSheet.create({
 	container: {
 		display: 'block',
 		position: 'relative',
-		minHeight: 64,
+		minHeight: 64 + 16,
+		borderBottom: '1px solid #eeeeee',
 	},
 	thumbnail: {
 		position: 'absolute',
@@ -91,6 +92,8 @@ const styles = StyleSheet.create({
 	price: {
 		textTransform: 'uppercase',
 		float: 'right',
+		position: 'relative',
+		bottom: -7,
 	},
 })
 
