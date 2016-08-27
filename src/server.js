@@ -45,16 +45,22 @@ server.get('*', function(req, res, next) {
     )
     fetchNeeds(props, store)
     .then((asyncProps) => {
-      const appHtml = renderToString(
-        <Provider store={store}>
-          <LookRoot config={serverConfig}>
-            <AsyncRouterContext {...props} asyncProps={asyncProps} />
-          </LookRoot>
-        </Provider>
-      )
+      var appHtml = ''
+      // Only server side render the stuff when not in dev mode, this 
+      // avoids us having to restart the server every time there's a change
+      if (process.env.NODE_ENV == 'production')
+        appHtml = renderToString(
+          <Provider store={store}>
+            <LookRoot config={serverConfig}>
+              <AsyncRouterContext {...props} asyncProps={asyncProps} />
+            </LookRoot>
+          </Provider>
+        )
       var html = templateHtml
       html = html.replace('<!--__APP_HTML__-->', appHtml)
-      const appCSS = StyleSheet.renderToString(serverConfig.prefixer)
+      var appCSS = ''
+      if (process.env.NODE_ENV == 'production')
+        appCSS = StyleSheet.renderToString(serverConfig.prefixer)
       html = html.replace('<!-- {{css}} -->', appCSS)
       const initialState = {asyncProps, store: store.getState()}
       html = html.replace('{/*__INITIAL_STATE__*/}', JSON.stringify(initialState))

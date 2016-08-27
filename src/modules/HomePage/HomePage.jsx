@@ -1,22 +1,27 @@
 import React, { Component } from 'react'
 import { loadCourses } from './../../actions/courses.js'
+import SuggestedCourses from './SuggestedCourses'
+import TopicSelection from './TopicSelection'
+import CourseList from './CourseList'
 
 class Home extends Component {
 	
-	static contextTypes = {
+	/*static contextTypes = {
 		store: React.PropTypes.object,
-	};
+	};*/
 
 	render = () => {
 		return <div>
-
+			<SuggestedCourses />
+			<TopicSelection />
+			<CourseList />
 		</div>
 	}
 
-	componentDidMount = () => {
+	/*componentDidMount = () => {
 		debugger
 		this.context.store.dispatch(loadCourses())
-	}
+	}*/
 }
 
 Home.needs = (props, store) => {

@@ -10,6 +10,7 @@ import routes from './modules/routes.js'
 import injectTapEventPlugin from "react-tap-event-plugin"
 import callAPIMiddleware from './callAPIMiddleware.js'
 import thunkMiddleware from 'redux-thunk'
+import { LookRoot, Presets } from 'react-look'
 
 injectTapEventPlugin();
 
@@ -30,16 +31,18 @@ if (process.env.NODE_ENV != 'production')
 
 render((
   <Provider store={store}>
-    <Router 
-      routes={routes} 
-      history={browserHistory}
-      render={(props) => <AsyncRouterContext 
-        {...props} 
-        // Pass in the async props that we're hydrating from 
-        // the server, these are needed so that the initial render 
-        // only needs to be done once. 
-        asyncProps={initialState.asyncProps}
-      />}
-    />
+    <LookRoot config={Presets['react-dom']}>
+      <Router 
+        routes={routes} 
+        history={browserHistory}
+        render={(props) => <AsyncRouterContext 
+          {...props} 
+          // Pass in the async props that we're hydrating from 
+          // the server, these are needed so that the initial render 
+          // only needs to be done once. 
+          asyncProps={initialState.asyncProps}
+        />}
+      />
+    </LookRoot>
   </Provider>
 ), document.getElementById('app'))
