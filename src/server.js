@@ -6,13 +6,15 @@ import { fetchNeeds, AsyncRouterContext } from 'redux-async-props'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { match } from 'react-router'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers/index.js'
 import routes from './modules/routes.js'
 import fs from 'fs'
 import { Presets, StyleSheet, LookRoot } from 'react-look'
 import coursesRouter from './api/courses.js'
+import callAPIMiddleware from './callAPIMiddleware.js'
+import thunkMiddleware from 'redux-thunk'
 
 const templateHtml = fs.readFileSync(path.resolve(__dirname, 'public', 'index.html'), 'utf8')
 const serverConfig = Presets['react-dom']
@@ -33,7 +35,14 @@ server.get('*', function(req, res, next) {
     serverConfig.userAgent = req.headers['user-agent']
     serverConfig.styleElementId = '_look'
 
-    const store = createStore(reducer)
+    //const store = createStore(reducer)
+    const store = applyMiddleware(
+      thunkMiddleware,
+      callAPIMiddleware,
+    )(createStore)(
+      reducer, 
+      {},
+    )
     fetchNeeds(props, store)
     .then((asyncProps) => {
       const appHtml = renderToString(

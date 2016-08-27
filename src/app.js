@@ -1,6 +1,6 @@
 require("babel-polyfill")
 import { AsyncRouterContext } from 'redux-async-props'
-import { createStore }  from 'redux';
+import { createStore, applyMiddleware }  from 'redux';
 import reducer from './reducers/index.js'
 import { render } from 'react-dom'
 import React from 'react'
@@ -8,12 +8,22 @@ import { Provider } from 'react-redux'
 import { Router, browserHistory } from 'react-router'
 import routes from './modules/routes.js'
 import injectTapEventPlugin from "react-tap-event-plugin"
+import callAPIMiddleware from './callAPIMiddleware.js'
+import thunkMiddleware from 'redux-thunk'
 
 injectTapEventPlugin();
 
+
+
 //... 
 const initialState = window.__INITIAL_STATE__
-const store = createStore(reducer, initialState.store)
+const store = applyMiddleware(
+  thunkMiddleware,
+  callAPIMiddleware,
+)(createStore)(
+  reducer, 
+  initialState.store,
+)
 render((
   <Provider store={store}>
     <Router 
