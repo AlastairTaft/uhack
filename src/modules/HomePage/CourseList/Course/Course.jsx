@@ -80,10 +80,13 @@ const styles = StyleSheet.create({
 		left: 120,
 		right: 16,
 		color: '#a1a1a1',
+		fontSize: 11,
 	},
 	rating: {
 		//padding: 2,
 		display: 'inline-block',
+		position: 'relative',
+		bottom: -5,
 	},
 	price: {
 		textTransform: 'uppercase',

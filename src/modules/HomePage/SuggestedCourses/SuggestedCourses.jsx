@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import look, { StyleSheet } from 'react-look'
 import SuggestedCourse from './SuggestedCourse'
+import PaginationIndicator from './PaginationIndicator'
 
 class SuggestedCourses extends Component {
 
@@ -23,6 +24,7 @@ class SuggestedCourses extends Component {
 		return <div className={styles.container}>
 			<div className={styles.title}>ValYou</div>
 			<SuggestedCourse {...selectedCourse} />
+			<PaginationIndicator total={5} index={1} />
 		</div>
 	}
 }
@@ -36,13 +38,14 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
 	},
 	title: {
-		fontSize: 18,
+		fontSize: 22,
 		position: 'absolute',
-    top: 0,
+    top: 20,
     left: 0,
     right: 0,
     textAlign: 'center',
     zIndex: 1,
+    fontFamily: 'LatoBold',
 	},
 })
 

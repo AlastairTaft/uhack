@@ -10,9 +10,13 @@ StyleSheet.addCSS({
   },
 })
 
-const fontStyles = {fontWeight: 300}
-const files = [require('./fonts/Lato-Hairline.ttf')]
-StyleSheet.font('Lato', files, fontStyles)
+const latoFontStyles = {fontWeight: 300}
+const latoFiles = [require('./fonts/Lato-Hairline.ttf')]
+StyleSheet.font('Lato', latoFiles, latoFontStyles)
+
+const latoBoldFontStyles = {fontWeight: 600}
+const latoBoldFiles = [require('./fonts/Lato-Regular.ttf')]
+StyleSheet.font('LatoBold', latoBoldFiles, latoBoldFontStyles)
 
 export default class App extends Component {
   render() {

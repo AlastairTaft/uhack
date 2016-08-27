@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import look, { StyleSheet } from 'react-look'
+import StarsRating from './../../../StarsRating'
 
 class SuggestedCourse extends Component {
 
@@ -28,6 +29,11 @@ class SuggestedCourse extends Component {
 		 * Number of minutes to complete each step.
 		 */
 		minutesPerStep: React.PropTypes.number,
+
+		/**
+		 * Rating, value 0 to 1
+		 */
+		rating: React.PropTypes.number,
 	};
 
 	static defaultProps = {
@@ -36,6 +42,7 @@ class SuggestedCourse extends Component {
 		numberOfReviews: 47,
 		numberOfSteps: 7,
 		minutesPerStep: 5,
+		rating: 0.5,
 	};
 
 	render = () => {
@@ -46,6 +53,7 @@ class SuggestedCourse extends Component {
 			numberOfReviews,
 			numberOfSteps,
 			minutesPerStep,
+			rating,
 		} = this.props
 
 		return <div 
@@ -57,7 +65,8 @@ class SuggestedCourse extends Component {
 			<h1 className={styles.courseTitle}>{name}</h1>
 
 			<div className={styles.reviewLayer}>
-				{numberOfReviews} Reviews
+				{numberOfReviews} Reviews - 
+				<StarsRating value={rating} className={styles.stars} />
 			</div>
 
 			<div className={styles.stepsLayer}>
@@ -83,18 +92,28 @@ const styles = StyleSheet.create({
 		margin: 0,
 		fontSize: 20,
 		textAlign: 'left',
+    fontFamily: 'Lato',
 	},
 	reviewLayer: {
 		position: 'absolute',
-		top: 260,
+		top: 240,
 		left: 12,
 		fontSize: 16,
+		fontSize: 12,
+    fontWeight: '200',
+	},
+	stars: {
+		position: 'relative',
+		bottom: -5,
+		display: 'inline-block',
 	},
 	stepsLayer: {
 		position: 'absolute',
-		top: 280,
+		top: 270,
 		left: 12,
 		fontSize: 16,
+		fontSize: 12,
+    fontWeight: '400',
 	},
 })
 
