@@ -7,7 +7,7 @@ import url from 'url'
 const router = new Router();
 router.use(bodyParser.json())
 
-router.get('*', async (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
   res.send([
     {
       id: 1,
