@@ -75,6 +75,9 @@ const styles = StyleSheet.create({
 		left: 72 + (16 * 2),
 		top: 35,
 	},
+	description: {
+		textAlign: 'justify',
+	},
 })
 
 export default look(MentorBio)

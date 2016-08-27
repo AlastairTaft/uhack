@@ -138,7 +138,10 @@ class OverviewPage extends Component {
 			</Card>
 			<Card style={{textAlign: 'center', padding: 10}}>
 				<h2 className={styles.subTitle}>Course Description</h2>
-				<div dangerouslySetInnerHTML={{__html: description}} />
+				<div 
+					className={styles.wallOfText} 
+					dangerouslySetInnerHTML={{__html: description}} 
+				/>
 			</Card>
 			<Card style={{textAlign: 'center', padding: 10}}>
 				<h2 className={styles.subTitle}>Course Outline</h2>
@@ -202,6 +205,11 @@ const styles = StyleSheet.create({
 	subTitle: {
 		fontWeight: 'normal',
     fontSize: 20,
+	},
+	wallOfText: {
+		color: '#3e3e3e',
+		textAlign: 'justify',
+		fontSize: 13,
 	},
 })
 

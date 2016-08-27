@@ -46,6 +46,7 @@ class LessonOutline extends Component {
 const styles = StyleSheet.create({
 	lessonWrap: {
 		margin: '10px 0',
+		fontSize: 15,
 	},
 	lessonAccent: {
 		fontWeight: 'bold',

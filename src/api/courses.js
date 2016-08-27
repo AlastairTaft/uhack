@@ -45,7 +45,7 @@ router.get('*', (req, res) => {
       minutesPerStep: 5,
       date: new Date((new Date).valueOf() - 5),
     }, 
-    {
+    /*{
       id: 4,
       backdrop: `${__API_URL__}/static/suit-portrait-preparation-wedding.jpg`,
       thumbnail: `${__API_URL__}/static/suit-portrait-preparation-wedding_tn.jpg`,
@@ -110,8 +110,8 @@ router.get('*', (req, res) => {
       numberOfSteps: 5,
       minutesPerStep: 5,
       date: new Date((new Date).valueOf() - 35),
-    },
-    {
+    },*/
+    /*{
       id: 10,
       backdrop: `${__API_URL__}/static/pen-writing-notes-studying.jpg`,
       thumbnail: `${__API_URL__}/static/pen-writing-notes-studying_tn.jpg`,
@@ -121,7 +121,18 @@ router.get('*', (req, res) => {
       numberOfSteps: 5,
       minutesPerStep: 5,
       date: new Date((new Date).valueOf() - 15),
-    }
+    },*/
+    {
+      id: 11,
+      backdrop: `${__API_URL__}/static/red-phone.jpg`,
+      thumbnail: `${__API_URL__}/static/red-phone_tn.jpg`,
+      name: "The keys to cold calling",
+      rating: 4 / 5,
+      numberOfReviews: 22,
+      numberOfSteps: 5,
+      minutesPerStep: 5,
+      date: new Date((new Date).valueOf() - 15),
+    },
   ])
 })
 
