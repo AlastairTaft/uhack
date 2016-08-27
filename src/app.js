@@ -14,7 +14,12 @@ import { LookRoot, Presets } from 'react-look'
 
 injectTapEventPlugin();
 
-
+browserHistory.listen((location) => {
+  if (global['ga']){
+    global['ga']('set', 'page', location.pathname)
+    global['ga']('send', 'pageview')
+  }
+})
 
 //... 
 const initialState = window.__INITIAL_STATE__
