@@ -1,4 +1,4 @@
 {
-	"main": "./TopicSelection.jsx",
+	"main": "./Container.jsx",
 	"name": "TopicSelection"
 }
