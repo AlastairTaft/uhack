@@ -42,6 +42,12 @@ class SuggestedCourses extends Component {
 				total={courses.length} 
 				index={selectedCourseIndex} 
 				className={styles.pageIndicator}
+				style={{
+					position: 'absolute',
+			    bottom: 8,
+			    left: 0,
+			    right: 0,
+				}}
 			/>
 		</div>
 	}

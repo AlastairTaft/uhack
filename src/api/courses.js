@@ -19,6 +19,7 @@ router.get('*', (req, res) => {
       numberOfReviews: 47,
       numberOfSteps: 7,
       minutesPerStep: 5,
+      date: new Date((new Date).valueOf() - 45),
     },
     {
       id: 2,
@@ -30,6 +31,7 @@ router.get('*', (req, res) => {
       numberOfReviews: 12,
       numberOfSteps: 5,
       minutesPerStep: 5,
+      date: new Date((new Date).valueOf() - 40),
     },
     {
       id: 3,
@@ -41,6 +43,7 @@ router.get('*', (req, res) => {
       numberOfReviews: 3,
       numberOfSteps: 7,
       minutesPerStep: 5,
+      date: new Date((new Date).valueOf() - 5),
     }, 
     {
       id: 4,
@@ -51,6 +54,7 @@ router.get('*', (req, res) => {
       numberOfReviews: 145,
       numberOfSteps: 3,
       minutesPerStep: 5,
+      date: new Date((new Date).valueOf() - 85),
     },
     {
       id: 5,
@@ -61,6 +65,7 @@ router.get('*', (req, res) => {
       numberOfReviews: 77,
       numberOfSteps: 5,
       minutesPerStep: 5,
+      date: new Date((new Date).valueOf() - 65),
     },
     {
       id: 6,
@@ -71,6 +76,7 @@ router.get('*', (req, res) => {
       numberOfReviews: 10,
       numberOfSteps: 3,
       minutesPerStep: 5,
+      date: new Date((new Date).valueOf() - 155),
     },
     {
       id: 7,
@@ -81,6 +87,7 @@ router.get('*', (req, res) => {
       numberOfReviews: 13,
       numberOfSteps: 5,
       minutesPerStep: 5,
+      date: new Date((new Date).valueOf() - 77),
     },
     {
       id: 8,
@@ -91,6 +98,7 @@ router.get('*', (req, res) => {
       numberOfReviews: 210,
       numberOfSteps: 5,
       minutesPerStep: 10,
+      date: new Date((new Date).valueOf() - 888),
     }, 
     {
       id: 9,
@@ -101,6 +109,7 @@ router.get('*', (req, res) => {
       numberOfReviews: 142,
       numberOfSteps: 5,
       minutesPerStep: 5,
+      date: new Date((new Date).valueOf() - 35),
     },
     {
       id: 10,
@@ -111,6 +120,7 @@ router.get('*', (req, res) => {
       numberOfReviews: 22,
       numberOfSteps: 5,
       minutesPerStep: 5,
+      date: new Date((new Date).valueOf() - 15),
     }
   ])
 })
