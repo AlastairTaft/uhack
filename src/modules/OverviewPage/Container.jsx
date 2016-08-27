@@ -21,7 +21,9 @@ const mapStateToProps = (state, props) => {
 	if (newProps.mentorId && state.mentors[newProps.mentorId]){
 		var mentor = state.mentors[newProps.mentorId]
 		newProps.mentorName = mentor.name
-
+		newProps.mentorThumbnail = mentor.thumbnail
+		newProps.mentorTitle = mentor.title
+		newProps.mentorDescription = mentor.description
 	}
 
 	return newProps
@@ -43,7 +45,7 @@ class OverviewPageContainer extends Component {
 const Container = connect(mapStateToProps)(OverviewPageContainer)
 
 Container.needs = (props, store) => {
-	return store.dispatch(loadCourse(props.params.id))
+	return Promise.resolve(store.dispatch(loadCourse(props.params.id)))
 	then(result => null)
 }
 

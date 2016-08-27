@@ -4,6 +4,7 @@ import look, { StyleSheet } from 'react-look'
 import StarsRating from './../StarsRating'
 import formatNumberToPrice from './../../formatNumberToPrice.js'
 import LessonOutline from './LessonOutline'
+import MentorBio from './MentorBio'
 
 class OverviewPage extends Component {
 	
@@ -18,6 +19,21 @@ class OverviewPage extends Component {
 		 * The mentor name.
 		 */
 		mentorName: React.PropTypes.string,
+
+		/**
+		 * The mentor thumbnail.
+		 */
+		mentorThumbnail: React.PropTypes.string,
+
+		/** 
+		 * The mentor title
+     */
+		mentorTitle: React.PropTypes.string,
+
+		/**
+		 * The mentor description, can be html.
+		 */
+		mentorDescription: React.PropTypes.string,
 
 		/**
 		 * The course title
@@ -80,6 +96,9 @@ class OverviewPage extends Component {
 		const { 
 			backdrop,
 			mentorName,
+			mentorThumbnail,
+			mentorTitle,
+			mentorDescription,
 			title,
 			numberOfReviews,
 			rating,
@@ -114,7 +133,12 @@ class OverviewPage extends Component {
 			</Card>
 			<Card>
 				<h2>Instructor</h2>
-				
+				<MentorBio 
+					name={mentorName} 
+					thumbnail={mentorThumbnail}
+					title={mentorTitle}
+					description={mentorDescription}
+				/>
 			</Card>
 		</div>
 	}

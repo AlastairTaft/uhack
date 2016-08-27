@@ -7,7 +7,7 @@ const router = new Router();
 const mentors = {
   1: {
     id: 1,
-    thumbnail: '',
+    thumbnail: `${__API_URL__}/static/unknown_person.png`,
     name: 'Alice Simons',
     title: 'Sales Trainer',
     description: 'Alicia Simons has been cracking the code...'

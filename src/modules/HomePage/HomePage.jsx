@@ -25,7 +25,7 @@ class Home extends Component {
 }
 
 Home.needs = (props, store) => {
-	return store.dispatch(loadCoursesOverview())
+	return Promise.resolve(store.dispatch(loadCoursesOverview()))
 	.then(result => null)
 }
 
