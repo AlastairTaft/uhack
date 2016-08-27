@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 const mapStateToProps = (state) => {
 	return {
-		courses: state.courses,
+		courses: state.courses.overview,
 	}
 }
 

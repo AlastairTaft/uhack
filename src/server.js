@@ -13,6 +13,8 @@ import routes from './modules/routes.js'
 import fs from 'fs'
 import { Presets, StyleSheet, LookRoot } from 'react-look'
 import coursesRouter from './api/courses.js'
+import courseRouter from './api/course.js'
+import mentorRouter from './api/mentor.js'
 import callAPIMiddleware from './callAPIMiddleware.js'
 import thunkMiddleware from 'redux-thunk'
 
@@ -74,5 +76,7 @@ console.log(`path: ${path.resolve(__dirname, '..', 'public')}`)
 server.use('/static', express.static(path.resolve(__dirname, '..', 'public')))
 
 server.use('/api/courses', coursesRouter)
+server.use('/api/course', courseRouter)
+server.use('/api/mentor', mentorRouter)
 
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}!`))

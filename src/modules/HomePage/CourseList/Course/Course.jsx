@@ -25,6 +25,11 @@ class Course extends Component {
 		 * it will get represented as a out of 5 stars display.
 		 */
 		rating: React.PropTypes.number,
+
+		/**
+		 * Fired when course is selected.
+		 */
+		onSelect: React.PropTypes.func,
 	};
 
 	static defaultProps = {
@@ -40,9 +45,10 @@ class Course extends Component {
 			thumbnail,
 			steps, 
 			rating,
+			onSelect,
 		} = this.props
 
-		return <div className={styles.container}>
+		return <div className={styles.container} onClick={onSelect}>
 			<img src={thumbnail} className={styles.thumbnail} />
 			<div className={styles.content}>
 				{name}

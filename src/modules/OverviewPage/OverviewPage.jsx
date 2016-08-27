@@ -5,13 +5,15 @@ import look, { StyleSheet } from 'react-look'
 class OverviewPage extends Component {
 	
 	static propTypes = {
+		
 		backdrop: React.PropTypes.string,
+
+
 	};
 
 	render = () => {
 
 		const { backdrop } = this.props
-
 		return <div>
 			<Card>
 				<div className={styles.backdrop}
@@ -31,9 +33,7 @@ const styles = StyleSheet.create({
 		position: 'relative',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    display: 'inline-block',
     backgroundColor: 'rgba(20, 19, 75, 0.5)',
-		backgroundBlendMode: 'multiply',
 	},
 })
 

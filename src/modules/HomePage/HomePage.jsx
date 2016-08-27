@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { loadCourses } from './../../actions/courses.js'
+import { loadCoursesOverview } from './../../actions/courses.js'
 import SuggestedCourses from './SuggestedCourses'
 import TopicSelection from './TopicSelection'
 import CourseList from './CourseList'
@@ -25,7 +25,8 @@ class Home extends Component {
 }
 
 Home.needs = (props, store) => {
-	return store.dispatch(loadCourses())
+	return store.dispatch(loadCoursesOverview())
+	.then(result => null)
 }
 
 export default Home
