@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import look, { StyleSheet } from 'react-look'
+import StarsRating from './../../../StarsRating'
 
 class Course extends Component {
 
@@ -29,17 +30,29 @@ class Course extends Component {
 	static defaultProps = {
 		name: 'How to win friends and influence people',
 		thumbnail: 'http://this-image-does-not-exist',
+		steps: 7,
+		rating: 0.5,
 	};
 
 	render = () => {
-		const { name, thumbnail } = this.props
+		const { 
+			name, 
+			thumbnail,
+			steps, 
+			rating,
+		} = this.props
 
 		return <div className={styles.container}>
 			<img src={thumbnail} className={styles.thumbnail} />
 			<div className={styles.content}>
 				{name}
 			</div>
-			
+			<div className={styles.footer}>
+				{steps} Steps - <StarsRating value={rating} className={styles.rating} />
+				<div className={styles.price}>
+					Free
+				</div>
+			</div>
 		</div>
 	}
 }
@@ -60,6 +73,21 @@ const styles = StyleSheet.create({
 	content: {
 		paddingLeft: 100,
 		margin: '14px 16px',
+	},
+	footer: {
+		position: 'absolute',
+		top: 40,
+		left: 120,
+		right: 16,
+		color: '#a1a1a1',
+	},
+	rating: {
+		//padding: 2,
+		display: 'inline-block',
+	},
+	price: {
+		textTransform: 'uppercase',
+		float: 'right',
 	},
 })
 

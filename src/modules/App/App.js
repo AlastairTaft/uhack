@@ -10,6 +10,10 @@ StyleSheet.addCSS({
   },
 })
 
+const fontStyles = {fontWeight: 300}
+const files = [require('./fonts/Lato-Hairline.ttf')]
+StyleSheet.font('Lato', files, fontStyles)
+
 export default class App extends Component {
   render() {
     return <div>
