@@ -5,8 +5,9 @@ import { connect } from 'react-redux'
 const mapStateToProps = (state) => {
 	
 	// Make the suggested courses the first three returned from the api
-	var courses = state.courses.overview.slice(0, 3)
-	
+	if (state.courses.overview)
+		var courses = state.courses.overview.slice(0, 3)
+
 	return {
 		courses,
 	}

@@ -5,6 +5,7 @@ import StarsRating from './../StarsRating'
 import formatNumberToPrice from './../../formatNumberToPrice.js'
 import LessonOutline from './LessonOutline'
 import MentorBio from './MentorBio'
+import FlatButton from './../FlatButton'
 
 class OverviewPage extends Component {
 	
@@ -71,7 +72,12 @@ class OverviewPage extends Component {
 			lesson5: React.PropTypes.string,
 			lesson6: React.PropTypes.string,
 			lesson7: React.PropTypes.string,
-		})
+		}),
+
+		/**
+		 * Fired when onBuy is clicked.
+		 */
+		onBuy: React.PropTypes.func,
 	};
 
 	static defaultProps = {
@@ -105,6 +111,7 @@ class OverviewPage extends Component {
 			price,
 			description,
 			courseOutline,
+			onBuy,
 		} = this.props
 		return <div>
 			<Card>
@@ -122,6 +129,12 @@ class OverviewPage extends Component {
 				<div className={styles.price}>
 					{price ? `$${formatNumberToPrice(price)}` : ''}
 				</div>
+				<FlatButton 
+					className={styles.buyButton}
+					onClick={onBuy}
+				>
+					Buy
+				</FlatButton>
 			</Card>
 			<Card>
 				<h2>Course Description</h2>
@@ -165,6 +178,11 @@ const styles = StyleSheet.create({
 	},
 	price: {
 
+	},
+	buyButton: {
+		position: 'absolute',
+		bottom: 10,
+		right: 10,
 	},
 })
 

@@ -31,6 +31,10 @@ const mapStateToProps = (state, props) => {
 
 class OverviewPageContainer extends Component {
 
+	static contextTypes = {
+		router: React.PropTypes.object,
+	};
+
 	componentDidMount = () => this.checkProps();
 	componentDidUpdate = () => this.checkProps();
 
@@ -39,7 +43,14 @@ class OverviewPageContainer extends Component {
 		dispatch(loadMentor(mentorId))
 	};
 
-	render = () => <OverviewPage {...this.props} />
+	onBuy = () => {
+		this.context.router.push(`/lessons/${this.props.params.id}`)
+	};
+
+	render = () => <OverviewPage 
+		{...this.props} 
+		onBuy={this.onBuy}
+	/>
 }
 
 const Container = connect(mapStateToProps)(OverviewPageContainer)

@@ -4,17 +4,16 @@ import look, { StyleSheet } from 'react-look'
 class Card extends Component {
 	render = () => {
 		return <div className={styles.container}>
-			{this.props.children}
+
 		</div>
 	}
 }
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: '#e9e9e9',
-		borderRadius: 5,
-		position: 'relative',
+		borderRadius: 10,
+		textAlign: 'center',
 	},
 })
 
-export default Card
+export default look(Card)
