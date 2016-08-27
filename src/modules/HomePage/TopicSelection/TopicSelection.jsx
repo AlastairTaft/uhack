@@ -25,12 +25,13 @@ const styles = StyleSheet.create({
 		listStyle: 'none',
 		display: 'inline-block',
     margin: 0,
+    paddingLeft: 0,
 	},
 	listItem: {
     display: 'inline-block',
-    margin: 5,
-    padding: 10,
-
+    margin: '0 5px',
+    padding: '0 10px',
+    lineHeight: '58px',
 	},
 })
 

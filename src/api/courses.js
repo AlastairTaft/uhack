@@ -10,10 +10,20 @@ router.use(bodyParser.json())
 router.get('*', async (req, res, next) => {
   res.send([
     {
-      name: "Beat Procrastination",
+      name: "Beat Procrastination - It Doesn't Have To Be Hard Work",
+      thumbnail: `${__API_URL__}/static/beat-procrastination-thumb.jpg`,
     },
     {
-      name: "Find Your Purpose"
+      name: "Find Your Purpose - Forget About How, Find Your Why",
+      thumbnail: `${__API_URL__}/static/find-your-purpose-thumb.jpg`,
+    },
+    {
+      name: "Sales 101 - How To Put Your Best Foot Forward", 
+      thumbnail: `${__API_URL__}/static/sales-101-thumb.jpg`,
+    }, 
+    {
+      name: "Self-Confidence",
+      thumbnail: `${__API_URL__}/static/self-confidence-thumb.jpg`,
     },
     {
       name: "Designing A Business Plan",
@@ -26,13 +36,7 @@ router.get('*', async (req, res, next) => {
     },
     {
       name: "Cooking A Week’s Worth Of Food",
-    },
-    {
-      name: "Basic Sales", 
-    },  
-    {
-      name: "Self-Confidence",
-    },
+    }, 
     {
       name: "Social Confidence",
     },

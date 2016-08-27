@@ -28,8 +28,7 @@ class Course extends Component {
 
 	static defaultProps = {
 		name: 'How to win friends and influence people',
-		// Random picture I google'd online that's a thumbnail of a penguin
-		thumbnail: 'http://www.imagemagick.org/Usage/thumbnails/cut_to_fit.gif',
+		thumbnail: 'http://this-image-does-not-exist',
 	};
 
 	render = () => {
@@ -40,6 +39,7 @@ class Course extends Component {
 			<div className={styles.content}>
 				{name}
 			</div>
+			
 		</div>
 	}
 }
@@ -48,15 +48,18 @@ const styles = StyleSheet.create({
 	container: {
 		display: 'block',
 		position: 'relative',
-		minHeight: 110,
+		minHeight: 64,
 	},
 	thumbnail: {
 		position: 'absolute',
 		top: 0,
-		left: 0,
+		left: 16,
+		height: 64,
+		width: 84,
 	},
 	content: {
-		paddingLeft: 120,
+		paddingLeft: 100,
+		margin: '14px 16px',
 	},
 })
 

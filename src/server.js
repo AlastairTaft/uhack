@@ -69,7 +69,9 @@ server.get('*', function(req, res, next) {
     .catch(next)
   })
 })
-server.use(express.static(path.resolve(__dirname, 'public')))
+
+console.log(`path: ${path.resolve(__dirname, '..', 'public')}`)
+server.use('/static', express.static(path.resolve(__dirname, '..', 'public')))
 
 server.use('/api/courses', coursesRouter)
 
