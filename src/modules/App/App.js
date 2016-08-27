@@ -15,7 +15,7 @@ StyleSheet.addCSS({
 })
 
 const latoFontStyles = {fontWeight: 300}
-const latoFiles = [require('./fonts/Lato-Hairline.ttf')]
+const latoFiles = [require('./fonts/Lato-Light.ttf')]
 StyleSheet.font('Lato', latoFiles, latoFontStyles)
 
 const latoBoldFontStyles = {fontWeight: 600}
