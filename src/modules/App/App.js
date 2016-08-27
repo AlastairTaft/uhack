@@ -7,6 +7,10 @@ StyleSheet.addCSS({
     margin: 0,
     padding: 0,
     fontFamily: "Helvetica",
+    color: '#2f2f2f',
+  },
+  'html': {
+    overflow: 'hidden',
   },
 })
 

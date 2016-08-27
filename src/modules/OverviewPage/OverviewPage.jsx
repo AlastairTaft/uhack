@@ -120,8 +120,8 @@ class OverviewPage extends Component {
 						backgroundImage: `url(${backdrop})`,
 					}}
 				/>
-				<h3>{mentorName}</h3>
-				<h1>{title}</h1>
+				<h3 className={styles.topMentorName}>{mentorName}</h3>
+				<h1 className={styles.topTitle}>{title}</h1>
 				<div className={styles.reviewLayer}>
 					{numberOfReviews} Reviews - 
 					<StarsRating value={rating} className={styles.stars} />
@@ -136,15 +136,15 @@ class OverviewPage extends Component {
 					Buy
 				</FlatButton>
 			</Card>
-			<Card>
+			<Card style={{textAlign: 'center', padding: 10}}>
 				<h2>Course Description</h2>
 				<div dangerouslySetInnerHTML={{__html: description}} />
 			</Card>
-			<Card>
+			<Card style={{textAlign: 'center', padding: 10}}>
 				<h2>Course Outline</h2>
 				<LessonOutline {...courseOutline} />
 			</Card>
-			<Card>
+			<Card style={{textAlign: 'center', padding: 10}}>
 				<h2>Instructor</h2>
 				<MentorBio 
 					name={mentorName} 
@@ -170,6 +170,7 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 		fontSize: 12,
     fontWeight: '200',
+    margin: 10,
 	},
 	stars: {
 		position: 'relative',
@@ -177,12 +178,24 @@ const styles = StyleSheet.create({
 		display: 'inline-block',
 	},
 	price: {
-
+		margin: 10,
+		paddingBottom: 20,
+		fontSize: 20,
 	},
 	buyButton: {
 		position: 'absolute',
 		bottom: 10,
 		right: 10,
+	},
+	topMentorName: {
+		fontWeight: 'normal',
+    fontSize: 13,
+    margin: 10,
+	},
+	topTitle: {
+		fontWeight: 'normal',
+		margin: 10,
+		fontSize: 23,
 	},
 })
 

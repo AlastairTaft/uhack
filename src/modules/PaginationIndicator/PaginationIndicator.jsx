@@ -23,7 +23,7 @@ class PaginationIndicator extends Component {
 	};
 
 	render = () => {
-		var { total, index, className } = this.props
+		var { total, index, className, ...otherProps } = this.props
 
 		var dots = []
 		for (var i = 0; i < total; i++){
@@ -36,7 +36,7 @@ class PaginationIndicator extends Component {
 			dots.push(<div className={localClass} />)
 		}
 
-		return <div className={styles.container}>
+		return <div className={styles.container} {...otherProps}>
 			{dots}
 		</div>
 	}
@@ -44,10 +44,8 @@ class PaginationIndicator extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		position: 'absolute',
-    bottom: 8,
-    left: 0,
-    right: 0,
+		position: 'relative',
+		textAlign: 'center',
 	},
 	dot: {
 		borderRadius: '50%',

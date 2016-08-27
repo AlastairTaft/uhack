@@ -23,11 +23,13 @@ const styles = StyleSheet.create({
 	container: {
 		backgroundColor: '#2953f5',
 		textTransform: 'uppercase',
-		minWidth: 96,
-		padding: 12,
 		display: 'inline-block',
 		color: 'white',
 		textAlign: 'center',
+		minWidth: 76,
+    padding: '8px 10px',
+    display: 'inline-block',
+    fontSize: 18,
 	}
 })
 

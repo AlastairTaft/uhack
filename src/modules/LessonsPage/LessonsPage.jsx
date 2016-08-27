@@ -83,6 +83,7 @@ class LessonsPage extends Component {
 			<PaginationIndicator 
 				index={selectedLessonIndex}
 				total={lessons.length}
+				style={{padding: '40px 0 20px 0'}}
 			/>
 		</div>
 	};

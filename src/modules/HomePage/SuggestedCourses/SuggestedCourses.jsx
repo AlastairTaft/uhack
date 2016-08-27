@@ -38,7 +38,11 @@ class SuggestedCourses extends Component {
 	      	/>
 		    )}	
 		  </Slider>
-			<PaginationIndicator total={courses.length} index={selectedCourseIndex} />
+			<PaginationIndicator 
+				total={courses.length} 
+				index={selectedCourseIndex} 
+				className={styles.pageIndicator}
+			/>
 		</div>
 	}
 }
@@ -61,6 +65,12 @@ const styles = StyleSheet.create({
     zIndex: 1,
     fontFamily: 'LatoBold',
 	},
+	pageIndicator: {
+		position: 'absolute',
+    bottom: 8,
+    left: 0,
+    right: 0,
+  },
 })
 
 export default look(SuggestedCourses)
