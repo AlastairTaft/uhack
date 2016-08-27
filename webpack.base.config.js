@@ -1,4 +1,5 @@
 var path = require('path')
+var webpack = require('webpack')
 
 const webpackConfig = {
   entry: [
@@ -10,7 +11,10 @@ const webpackConfig = {
     filename: "bundle.js"
   },
   plugins: [
-    
+    new webpack.DefinePlugin({
+      __API_URL__: '"' + process.env.API_URL + '"',
+      'process.env.NODE_ENV': process.env.NODE_ENV == 'production' ? '"production"' : '"development"',
+    })
   ],
   module: {
     loaders: [

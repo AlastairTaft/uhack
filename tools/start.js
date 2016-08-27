@@ -1,3 +1,5 @@
+defaultEnvVars()
+
 import gaze from 'gaze'
 import cp from 'child_process'
 import path from 'path' 
@@ -6,8 +8,6 @@ import chalk from 'chalk'
 import copyFile from './copyFile.js'
 import WebpackDevServer from 'webpack-dev-server'
 import webpack from 'webpack'
-import webpackAppConfig from './../webpack.config.js'
-import webpackServerConfig from './../webpack.server.config.js'
 var babel = require("babel-core");
 
 fs.mkdirSync('./dist')
@@ -24,6 +24,8 @@ function startServer(){
   const entryFile = path.join(__dirname, '../dist/server.bundle.js')
   
   var server
+
+  var webpackServerConfig = require('./../webpack.server.config.js')
 
   var config = Object.assign({}, webpackServerConfig)
   var compiler = webpack(config);
@@ -60,6 +62,7 @@ function startServer(){
 
 function runWebpackDevServer(){
 
+  var webpackAppConfig = require('./../webpack.config.js')
   var config = Object.assign({}, webpackAppConfig)
   config.entry.push("webpack/hot/dev-server")
   config.entry.push("webpack-dev-server/client?http://localhost:8080/")
@@ -107,4 +110,28 @@ function runWebpackDevServer(){
   server.listen(8080, "localhost", function() {
     console.log('webpack dev server running on port 8080')
   });
+}
+
+
+/**
+ * @fileoverview Defaults the current env vars to what's in the root .env file.
+ */
+function defaultEnvVars(){
+  // Default env vars
+  // Load env vars from the .env file if they aren't present
+  if (fs.existsSync('./.env')){
+    var contents = fs.readFileSync('./.env', 'utf8')
+      , lines = contents.split("\n")
+    lines.forEach(function(line){
+      var parts = line.split("=")
+        , name = parts[0]
+        , val = parts[1]
+
+      if (typeof process.env[name] === 'undefined'){
+        process.env[name] = val
+
+        console.log('Defaulting env var ', name, ' to ', val)
+      }
+    })
+  }
 }

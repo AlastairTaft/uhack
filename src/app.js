@@ -24,6 +24,10 @@ const store = applyMiddleware(
   reducer, 
   initialState.store,
 )
+// For debugging, let the console have access to the store
+if (process.env.NODE_ENV != 'production')
+  global.store = store
+
 render((
   <Provider store={store}>
     <Router 

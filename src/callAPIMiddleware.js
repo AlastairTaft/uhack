@@ -34,15 +34,31 @@ export default function callAPIMiddleware({ dispatch, getState }) {
       type: requestType
     }))
 
-    return callAPI().then(
-      response => dispatch(Object.assign({}, payload, {
-        response,
-        type: successType
-      })),
-      error => dispatch(Object.assign({}, payload, {
-        error,
-        type: failureType
-      }))
-    )
+    return callAPI()
+    .then(response => {
+
+      const handler = json => {
+
+        // If the status code is 200 then lets assume everything was successful
+        if (response.status == 200 || response.status == undefined)
+          return dispatch(Object.assign({}, payload, {
+            response: json,
+            type: successType,
+            statusCode: response.status,
+          }))
+
+        return dispatch(Object.assign({}, payload, {
+          response: json,
+          type: failureType,
+          statusCode: response.status,
+        }))
+      }
+
+      return response.json().then(handler)
+    })
+    .catch(error => {
+      console.error(error)
+      throw error
+    })
   }
 }
