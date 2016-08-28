@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
 		height: 248,
 		backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
 	},
 })
 
