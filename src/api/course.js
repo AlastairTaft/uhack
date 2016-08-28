@@ -97,7 +97,7 @@ const courses = {
       lesson1: 'What did you grow up around?',
       lesson2: 'What can you talk about easily on a Saturday night with a complete stranger?',
       lesson3: 'What have you stopped doing because you think it’s ‘childish’?',
-      lesson4: 'What do strangers say about you? ',
+      lesson4: 'What do strangers say about you?',
       lesson5: 'If there were no limitations or consequences, what would your perfect average day look like?',
       lesson6: 'What have you been doing for the past 5 to 10 years?',
       lesson7: 'What would you do if you knew your results?',
@@ -125,7 +125,7 @@ const courses = {
     `,
     courseOutline: {
       lesson1: 'Create a list of tasks',
-      lesson2: 'Priority planning ',
+      lesson2: 'Priority planning',
       lesson3: 'Which task when completed would make others redundant?',
       lesson4: 'Delegation',
       lesson5: 'Deletion',
@@ -186,7 +186,7 @@ const courses = {
       lesson4: 'Explain their benefits',
       lesson5: 'Show your proof',
       lesson6: 'How to wrap it up',
-      lesson7: 'The final check (Grammarly) ',
+      lesson7: 'The final check (Grammarly)',
     },
     mentor: 1,
   }

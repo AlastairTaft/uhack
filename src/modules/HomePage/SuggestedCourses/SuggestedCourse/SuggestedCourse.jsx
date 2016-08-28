@@ -56,6 +56,7 @@ class SuggestedCourse extends Component {
 			minutesPerStep,
 			rating,
 			screenWidth,
+			onSelect,
 		} = this.props
 
 		return <div 
@@ -67,6 +68,7 @@ class SuggestedCourse extends Component {
 		    // Hmm seems a little hacky but meh!
 		    width: screenWidth || 400,
 			}}
+		  onClick={onSelect}
 		>
 			<h1 className={styles.courseTitle}>{name}</h1>
 
