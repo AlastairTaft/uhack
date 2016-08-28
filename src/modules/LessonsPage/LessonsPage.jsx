@@ -62,7 +62,6 @@ class LessonsPage extends Component {
 			className={styles.container}
 		>
 			<div className={styles.title}>{name}</div>
-			<div className={styles.videoPlaceholder} />
 			<div className={styles.sliderWrap}>
 				<Slider
 			    ref="slider"
@@ -101,9 +100,6 @@ const styles = StyleSheet.create({
 	sliderWrap: {
 		paddingLeft: 30,
 		paddingRight: 30,
-	},
-	videoPlaceholder: {
-		height: 300,
 	},
 })
 

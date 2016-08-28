@@ -27,9 +27,12 @@ const styles = StyleSheet.create({
 		color: 'white',
 		textAlign: 'center',
 		minWidth: 76,
-    padding: '8px 10px',
     display: 'inline-block',
-    fontSize: 18,
+    padding: '6px 8px',
+    borderRadius: 11,
+    fontSize: 12,
+    fontWeight: '300',
+
 	}
 })
 

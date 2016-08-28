@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { StyleSheet } from 'react-look'
+import BackButton from './../BackButton'
 
 StyleSheet.addCSS({
   'html, body': {
@@ -23,8 +24,21 @@ const latoBoldFiles = [require('./fonts/Lato-Regular.ttf')]
 StyleSheet.font('LatoBold', latoBoldFiles, latoBoldFontStyles)
 
 export default class App extends Component {
+
+  static contextTypes = {
+    router: React.PropTypes.object,
+  };
+
   render() {
     return <div>
+      <BackButton 
+        style={{
+          position: 'absolute',
+          top: 5,
+          left: 5,
+        }} 
+        onClick={() => this.context.router.goBack()}
+      />
       {this.props.children}
     </div>
   }

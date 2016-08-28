@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import look, { StyleSheet } from 'react-look'
 import formatNumberToMinutes from './../../../formatNumberToMinutes.js'
 import Card from './../Card'
+import FlatButton from './../../FlatButton'
+
+const videoPreview = require('./video-preview.png')
 
 class Lesson extends Component { 
 
@@ -49,6 +52,9 @@ class Lesson extends Component {
 		} = this.props
 
 		return <div className={styles.container} {...otherProps}>
+			<div className={styles.videoPreviewWrapper}>
+				<div className={styles.videoPreview} />
+			</div>
 			<Card className={styles.card}>
 				<div className={styles.title}>{title}</div>
 				<div className={styles.step}>{step} of {maxStep}</div>
@@ -57,8 +63,9 @@ class Lesson extends Component {
 					dangerouslySetInnerHTML={{__html: description}}
 				/>
 				<div className={styles.estimatedTime}>
-					{estimatedNumberOfMinutes ? formatNumberToMinutes(estimatedNumberOfMinutes) : ''}
+					{estimatedNumberOfMinutes ? `${formatNumberToMinutes(estimatedNumberOfMinutes)} Min` : ''}
 				</div>
+				<FlatButton>Start</FlatButton>
 			</Card>
 		</div>
 	}
@@ -67,13 +74,17 @@ class Lesson extends Component {
 const styles = StyleSheet.create({
 	container: {
 		display: 'inline-block',
+		verticalAlign: 'top',
 	},
 	card: {
 		margin: 15,
+		minHeight: 260,
 	},
 	title: {
 		paddingTop: 70,
 		fontWeight: '600',
+		paddingLeft: 15,
+    paddingRight: 15,
 	},
 	step: {
 		padding: 15,
@@ -81,9 +92,22 @@ const styles = StyleSheet.create({
 	},
 	description: {
 		paddingBottom: 15,
+		fontSize: 12,
+		paddingLeft: 15,
+    paddingRight: 15,
 	},
 	estimatedTime: {
 		paddingBottom: 40,
+		fontSize: 12,
+	},
+	videoPreviewWrapper: {
+		margin: '40px 18px',
+	},
+	videoPreview: {
+		backgroundImage: `url(${videoPreview})`,
+		height: 248,
+		backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
 	},
 })
 
