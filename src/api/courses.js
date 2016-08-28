@@ -10,6 +10,17 @@ router.use(bodyParser.json())
 router.get('*', (req, res) => {
   return res.send([
     {
+      id: 1,
+      backdrop: `${__API_URL__}/static/mountain.jpg`,
+      thumbnail: `${__API_URL__}/static/mountain_tn.jpg`,
+      name: "How to get more done in less time",
+      rating: 4 / 5,
+      numberOfReviews: 47,
+      numberOfSteps: 6,
+      minutesPerStep: 5,
+      date: new Date((new Date).valueOf() - 45),
+    },
+    {
       id: 2,
       backdrop: `${__API_URL__}/static/ski-slope.jpg`,
       thumbnail: `${__API_URL__}/static/ski-slope_tn.jpg`,
@@ -63,17 +74,6 @@ router.get('*', (req, res) => {
       numberOfSteps: 5,
       minutesPerStep: 5,
       date: new Date((new Date).valueOf() - 15),
-    },
-    {
-      id: 1,
-      backdrop: `${__API_URL__}/static/mountain.jpg`,
-      thumbnail: `${__API_URL__}/static/mountain_tn.jpg`,
-      name: "How to get more done in less time",
-      rating: 4.5 / 5,
-      numberOfReviews: 47,
-      numberOfSteps: 6,
-      minutesPerStep: 5,
-      date: new Date((new Date).valueOf() - 45),
     },
   ])
 })
