@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     paddingRight: 15,
 	},
 	estimatedTime: {
-		paddingBottom: 40,
+		paddingBottom: 20,
 		fontSize: 12,
 	},
 	videoPreviewWrapper: {

@@ -75,6 +75,8 @@ class LessonsPage extends Component {
 							style={{
 			      		width: (screenWidth - 100) || 400,
 			      	}} 
+			      	step={i + 1}
+			      	maxStep={lessons.length}
 		      	/>
 			    )}
 			  </Slider>

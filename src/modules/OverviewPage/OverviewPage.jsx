@@ -114,7 +114,7 @@ class OverviewPage extends Component {
 			onBuy,
 		} = this.props
 		return <div>
-			<Card>
+			<Card style={{marginTop: 0}}>
 				<div className={styles.backdrop}
 					style={{
 						backgroundImage: `url(${backdrop})`,

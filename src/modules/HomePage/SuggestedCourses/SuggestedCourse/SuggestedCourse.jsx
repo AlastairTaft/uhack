@@ -68,16 +68,18 @@ class SuggestedCourse extends Component {
 		    // Hmm seems a little hacky but meh!
 		    width: screenWidth || 400,
 			}}
-		  onClick={onSelect}
 		>
-			<h1 className={styles.courseTitle}>{name}</h1>
+			<h1 className={styles.courseTitle} 
+		  	onClick={onSelect}>{name}</h1>
 
-			<div className={styles.reviewLayer}>
+			<div className={styles.reviewLayer} 
+		  	onClick={onSelect}>
 				{numberOfReviews} Reviews - 
 				<StarsRating value={rating} className={styles.stars} />
 			</div>
 
-			<div className={styles.stepsLayer}>
+			<div className={styles.stepsLayer} 
+		  	onClick={onSelect}>
 				{numberOfSteps} Steps - {minutesPerStep} minutes per Step
 			</div>
 		</div>
