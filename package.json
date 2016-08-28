@@ -50,7 +50,7 @@
     "url": "git+https://github.com/AlastairTaft/raincheck.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/AlastairTaft/raincheck/issues"
   },
