@@ -82,10 +82,10 @@ class OverviewPage extends Component {
 
 	static defaultProps = {
 		mentorName: '',
-		title: 'The Keys To Cold Calling',
-		numberOfReviews: 47,
-		rating: 0.5,
-		price: 1000,
+		title: '',
+		numberOfReviews: 0,
+		rating: 0,
+		price: 0,
 		courseOutline: {
 			lesson1: '',
 			lesson2: '',
@@ -133,8 +133,10 @@ class OverviewPage extends Component {
 					className={styles.buyButton}
 					onClick={onBuy}
 				>
-					Buy
+					Start
 				</FlatButton>
+			{/* Kill the collapsing margins */}
+				<div style={{paddingBottom: 1}} />
 			</Card>
 			<Card style={{textAlign: 'center', padding: 10}}>
 				<h2 className={styles.subTitle}>Course Description</h2>

@@ -18,7 +18,7 @@ class Course extends Component {
 		/**
 		 * The number of steps it takes to complete this course. Max is 7.
 		 */
-		steps: React.PropTypes.number,
+		numberOfSteps: React.PropTypes.number,
 
 		/**
 		 * Rating, this is a number from 0 to 1. 1 being best, 0 being worst
@@ -35,7 +35,7 @@ class Course extends Component {
 	static defaultProps = {
 		name: 'How to win friends and influence people',
 		thumbnail: 'http://this-image-does-not-exist',
-		steps: 7,
+		numberOfSteps: 7,
 		rating: 0.5,
 	};
 
@@ -43,7 +43,7 @@ class Course extends Component {
 		const { 
 			name, 
 			thumbnail,
-			steps, 
+			numberOfSteps, 
 			rating,
 			onSelect,
 		} = this.props
@@ -54,7 +54,7 @@ class Course extends Component {
 				{name}
 			</div>
 			<div className={styles.footer}>
-				{steps} Steps - <StarsRating value={rating} className={styles.rating} />
+				{numberOfSteps} Steps - <StarsRating value={rating} className={styles.rating} />
 				<div className={styles.price}>
 					Free
 				</div>

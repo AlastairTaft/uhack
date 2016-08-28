@@ -16,6 +16,10 @@ const mapStateToProps = (state, props) => {
 		newProps.mentorId = course.mentor
 		newProps.description = course.description
 		newProps.courseOutline = course.courseOutline
+		newProps.title = course.name
+		newProps.numberOfReviews = course.numberOfReviews
+		newProps.rating = course.rating
+		newProps.price = course.price
 	}
 
 	if (newProps.mentorId && state.mentors[newProps.mentorId]){

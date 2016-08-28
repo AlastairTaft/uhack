@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
 		backgroundColor: '#e9e9e9',
 		borderRadius: 5,
 		position: 'relative',
+		marginTop: 3,
 	},
 })
 
